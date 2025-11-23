@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="primary">
     <ion-title>
       DivisApp 24000182
@@ -6,29 +6,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <h2>Conversor de Divisas</h2>
-    <p>Quetzales a Dólares</p>
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>Conversor de Divisas</h1>
+    <p class="subtitle">Quetzales a Dólares</p>
 
-    <ion-card>
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Cantidad en Quetzales (Q)</ion-label>
-          <ion-input 
-            type="number" 
-            [(ngModel)]="cantidadQuetzales"
-            (ionInput)="convertir()"
-            placeholder="0.00">
-          </ion-input>
-        </ion-item>
+    <div class="input-section">
+      <ion-item lines="none">
+        <ion-label position="floating">Cantidad en Quetzales (Q)</ion-label>
+        <ion-input 
+          type="number" 
+          [(ngModel)]="cantidadQuetzales"
+          (ionInput)="convertir()"
+          placeholder="0.00">
+        </ion-input>
+      </ion-item>
+    </div>
 
-        <div class="resultado">
-          <h3>Resultado:</h3>
-          <p class="monto-dolares">$ {{ cantidadDolares }}</p>
-          <p class="tasa">Tasa de cambio: Q 8.00 = $ 1.00</p>
-        </div>
-      </ion-card-content>
-    </ion-card>
+    <div class="result-section">
+      <p class="result-label">Resultado en Dólares:</p>
+      <p class="result-amount">$ {{ cantidadDolares }}</p>
+    </div>
+
+    <div class="rate-info">
+      <ion-note>Tasa de cambio: Q 8.00 = $ 1.00</ion-note>
+    </div>
   </div>
 </ion-content>
